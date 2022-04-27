@@ -1,0 +1,8 @@
+{
+    "name":"uiu-coder-of-the-month-tracker",
+    "version":"0.0.1",
+    "description":"Track the coder of the month",
+    "dependencies": {
+        "discord-interactions": "^3.2.0"
+    }
+}
