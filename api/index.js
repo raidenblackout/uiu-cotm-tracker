@@ -21,11 +21,10 @@ app.post('/api', verifyKeyMiddleware('4fb933cfe1d3038b611d700d6f7a12f3843f03ba20
         content: 'Hello world',
       },
     });
-  }else{
-    res.send({
-      data: {
-        content: 'Hello world',
-      },
+  }else if (message.type === InteractionType.PING) {
+    console.log("Handling Ping request");
+    response.send({
+      type: InteractionResponseType.PONG,
     });
   }
 });
