@@ -17,7 +17,7 @@ app.get('/api', (req, res) => {
 //   // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 //   res.send("Hello World!");
 // });
-app.post('/interactions', verifyKeyMiddleware('4fb933cfe1d3038b611d700d6f7a12f3843f03ba20bded60da82f37cbcb07d4b'), (req, res) => {
+app.post('/api/interactions', verifyKeyMiddleware('4fb933cfe1d3038b611d700d6f7a12f3843f03ba20bded60da82f37cbcb07d4b'), (req, res) => {
   const message = req.body;
   if (message.type === InteractionType.APPLICATION_COMMAND) {
     res.send({
