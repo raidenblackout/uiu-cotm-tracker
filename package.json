@@ -1,10 +1,24 @@
 {
-    "name":"uiu-coder-of-the-month-tracker",
-    "version":"0.0.1",
-    "description":"Track the coder of the month",
-    "main": "index.js",
-    "dependencies": {
-        "discord-interactions": "^3.2.0",
-        "raw-body": "^2.4.1"
-    }
+  "name": "uiu-cotm-tracker",
+  "version": "1.0.0",
+  "description": "N/A",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raidenblackout/uiu-cotm-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raidenblackout/uiu-cotm-tracker/issues"
+  },
+  "homepage": "https://github.com/raidenblackout/uiu-cotm-tracker#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  }
 }
