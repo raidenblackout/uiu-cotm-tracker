@@ -102,6 +102,6 @@ module.exports = async (request, response) => {
       response.status(400).send({ error: 'Unknown Type' });
     }
   }else{
-    response.status(200).send("bruh");
+    response.status(200).send({"data": "Hello World"});
   }
 };
