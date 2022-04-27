@@ -26,6 +26,10 @@ app.post('/api/interactions', verifyKeyMiddleware('4fb933cfe1d3038b611d700d6f7a1
         content: 'Hello world',
       },
     });
+  }else{
+    res.setHeader('Content-Type', 'text/html');
+  // res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.send("Hello World!");
   }
 });
 
