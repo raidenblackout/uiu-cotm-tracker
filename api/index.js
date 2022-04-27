@@ -1,16 +1,24 @@
-require('dotenv').config(); //initialize dotenv
-const Discord = require('discord.js'); //import discord.js
+const {
+  InteractionResponseType,
+  InteractionType,
+  verifyKeyMiddleware,
+} = require("discord-interactions");
 
-const client = new Discord.Client({intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES]}); //create new client
+const app = express();
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
-client.on('messageCreate', msg => {
-  console.log('message');
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
+app.post('/interactions', verifyKeyMiddleware('4fb933cfe1d3038b611d700d6f7a12f3843f03ba20bded60da82f37cbcb07d4b'), (req, res) => {
+  const message = req.body;
+  if (message.type === InteractionType.APPLICATION_COMMAND) {
+    res.send({
+      type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+      data: {
+        content: 'Hello world',
+      },
+    });
   }
 });
-//make sure this line is the last line
-client.login(process.env.CLIENT_TOKEN);
+
+module.exports = app;
